@@ -7,12 +7,8 @@ class ArmstrongNumbers {
 		String intStr = Integer.toString(numberToCheck);
 		int numOfDigits = intStr.length();
 
-		int[] digits = new int[numOfDigits];
-		for(int i = 0; i < numOfDigits; i++) {
-			digits[i] = Character.getNumericValue(intStr.charAt(i));
-		}
-
-		int total = Arrays.stream(digits)
+		int total = intStr.chars()
+			.mapToObj(i -> Character.getNumericValue(i))
 			.reduce(0, (a, b) -> a + (int)Math.pow(b, numOfDigits));
 		
 		return total == numberToCheck;
