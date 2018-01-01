@@ -1,0 +1,14 @@
+.gradle
+build
+java/**/.settings
+bin
+.classpath
+.project
+.vscode
+**/bin
+*.class
+test/java
+.cache
+__pycache__
+
+*.pyc
